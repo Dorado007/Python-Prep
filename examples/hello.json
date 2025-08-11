@@ -1,0 +1,5 @@
+[
+  {"action": "log", "args": {"message": "Inicio del flujo"}},
+  {"action": "delay", "args": {"seconds": 1}},
+  {"action": "log", "args": {"message": "Fin"}}
+]
