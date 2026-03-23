@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPA Studio Lite</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <button class="icon-btn" id="backBtn" aria-label="Volver">←</button>
+      <input id="automationName" value="Nueva Automatización" />
+      <div class="actions">
+        <button class="ghost">Plantillas</button>
+        <button class="ghost" id="saveBtn">Guardar</button>
+        <button class="primary" id="runBtn">Ejecutar</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <h2>ACTIVIDADES</h2>
+        <input id="search" placeholder="Buscar actividad..." />
+
+        <section class="group">
+          <h3>Control de Flujo</h3>
+          <div class="activity" draggable="true" data-type="start">Inicio</div>
+          <div class="activity" draggable="true" data-type="if">Condición If</div>
+          <div class="activity" draggable="true" data-type="for">Bucle For Each</div>
+          <div class="activity" draggable="true" data-type="while">Bucle While</div>
+          <div class="activity" draggable="true" data-type="wait">Esperar</div>
+          <div class="activity" draggable="true" data-type="end">Fin</div>
+        </section>
+
+        <section class="group">
+          <h3>Navegador Web</h3>
+          <div class="activity" draggable="true" data-type="open-browser">Abrir Navegador</div>
+          <div class="activity" draggable="true" data-type="click">Click Elemento</div>
+          <div class="activity" draggable="true" data-type="write">Escribir Texto</div>
+        </section>
+      </aside>
+
+      <section class="canvas-wrap">
+        <div id="canvas" class="canvas" aria-label="Diseñador de flujo"></div>
+        <div class="zoom">100%</div>
+      </section>
+
+      <aside class="properties">
+        <h3>Propiedades</h3>
+        <p id="propEmpty">Selecciona un bloque para editar.</p>
+        <form id="propForm" class="hidden">
+          <label>
+            Nombre
+            <input id="propName" />
+          </label>
+          <label>
+            Parámetros (JSON)
+            <textarea id="propParams" rows="6"></textarea>
+          </label>
+          <button type="submit" class="primary small">Aplicar cambios</button>
+        </form>
+      </aside>
+    </main>
+
+    <footer>
+      <strong>Log de ejecución</strong>
+      <pre id="log">Listo para ejecutar...</pre>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
